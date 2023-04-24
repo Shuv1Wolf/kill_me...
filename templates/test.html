@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const data = '{{ tuple1 }}';
+        const json = JSON.parse(data.replace(/&quot;/g,'"'));
+        const confirmationData = json.confirmation.confirmation_data;
+        location.href = confirmationData
+    </script>
+</body>
+</html>
