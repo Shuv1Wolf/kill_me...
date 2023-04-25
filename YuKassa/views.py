@@ -44,7 +44,7 @@ def payment(request):
                         ]
                     },
                     "capture": True,
-                    # "test": True
+                    "test": True
                 })
 
                 json = payment.json().replace('&quot;', '')
@@ -87,7 +87,7 @@ def payment(request):
                         ]
                     },
                     "capture": True,
-                    # "test": True
+                    "test": True
                 })
 
                 json = payment.json().replace('&quot;', '')
@@ -129,7 +129,7 @@ def payment(request):
                         ]
                     },
                     "capture": True,
-                    # "test": True
+                    "test": True
                 })
 
                 json = payment.json().replace('&quot;', '')
