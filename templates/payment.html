@@ -18,15 +18,15 @@
             {% csrf_token %}
             <div class="row g-3">
               <div class="col">
-                {{ form1.as_p }}
+                  {{ form.field1 }}
                   <button type="submit" class="btn btn-dark" formmethod="post">Купить</button>
               </div>
               <div class="col">
-
+                  {{ form.field2 }}
                   <button type="submit" class="btn btn-dark" formmethod="post">Купить</button>
               </div>
               <div class="col">
-
+                  {{ form.field3 }}
                   <button type="submit" class="btn btn-dark" formmethod="post">Купить</button>
               </div>
             </div>

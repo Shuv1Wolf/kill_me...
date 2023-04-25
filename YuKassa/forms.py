@@ -1,7 +1,7 @@
 from django.forms import ModelForm, TextInput, NumberInput
 from .models import paymentModel1, paymentModel2, paymentModel3, paymentModelAll
 
-
+# тестовые формы
 class paymentForm1(ModelForm):
     class Meta:
         model = paymentModel1
@@ -41,6 +41,7 @@ class paymentForm3(ModelForm):
         }
 
 
+# релизная форма
 class paymentFormAll(ModelForm):
     class Meta:
        model = paymentModelAll
