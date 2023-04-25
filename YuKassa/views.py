@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import paymentForm1, paymentForm2, paymentForm3, paymentFormAll
+from .forms import paymentFormAll
 from yookassa import Payment, Configuration
 
 
@@ -27,7 +27,8 @@ def payment(request):
                     "receipt": {
                         "customer": {
                             "full_name": "Иванов Иван Иванович",
-                            "phone": "79000000000"
+                            "phone": "79000000000",
+                            "email": "724101@gmail.com"
                         },
                         "items": [
                             {
@@ -70,7 +71,8 @@ def payment(request):
                     "receipt": {
                         "customer": {
                             "full_name": "Иванов Иван Иванович",
-                            "phone": "79000000000"
+                            "phone": "79000000000",
+                            "email": "724101@gmail.com"
                         },
                         "items": [
                             {
@@ -112,7 +114,8 @@ def payment(request):
                     "receipt": {
                         "customer": {
                             "full_name": "Иванов Иван Иванович",
-                            "phone": "79000000000"
+                            "phone": "79000000000",
+                            "email": "724101@gmail.com",
                         },
                         "items": [
                             {
