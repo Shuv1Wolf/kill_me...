@@ -13,23 +13,25 @@
     <p class="placeholder-wave">
         <span class="placeholder col-12 placeholder-lg"></span>
     </p>
-    <form method="post">
-        <div class="form-row">
-            {% csrf_token %}
-            <div class="row g-3">
-              <div class="col">
-                  {{ form.field1 }}
-                  <button type="submit" class="btn btn-dark" formmethod="post">Купить</button>
-              </div>
-              <div class="col">
-                  {{ form.field2 }}
-                  <button type="submit" class="btn btn-dark" formmethod="post">Купить</button>
-              </div>
-              <div class="col">
-                  {{ form.field3 }}
-                  <button type="submit" class="btn btn-dark" formmethod="post">Купить</button>
-              </div>
-            </div>
-    </form>
+    <div class="container overflow-hidden text-center">
+        <form method="post">
+            <div class="form-row">
+                {% csrf_token %}
+                <div class="row g-3">
+                  <div class="col">
+                      <p>{{ form.field1 }}</p>
+                      <button type="submit" class="btn btn-dark" formmethod="post">Купить1</button>
+                  </div>
+                  <div class="col">
+                      <p>{{ form.field2 }}</p>
+                      <button type="submit" class="btn btn-dark" formmethod="post">Купить2</button>
+                  </div>
+                  <div class="col">
+                      <p>{{ form.field3 }}</p>
+                      <button type="submit" class="btn btn-dark" formmethod="post">Купить3</button>
+                  </div>
+                </div>
+        </form>
+    </div>
 </body>
 </html>

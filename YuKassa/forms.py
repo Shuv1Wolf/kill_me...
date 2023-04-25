@@ -49,17 +49,17 @@ class paymentFormAll(ModelForm):
        widgets = {
            'field1': NumberInput(attrs={
                'class': "form-control",
-               'placeholder': "Цена",
-               'aria-label': "Цена",
+               'placeholder': "Цена1",
+               'aria-label': "Цена1",
            }),
            'field2': NumberInput(attrs={
                'class': "form-control",
-               'placeholder': "Цена",
-               'aria-label': "Цена",
+               'placeholder': "Цена2",
+               'aria-label': "Цена2",
            }),
            'field3': NumberInput(attrs={
                'class': "form-control",
-               'placeholder': "Цена",
-               'aria-label': "Цена",
+               'placeholder': "Цена3",
+               'aria-label': "Цена3",
            })
        }
