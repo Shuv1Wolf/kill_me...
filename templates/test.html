@@ -8,7 +8,11 @@
     <script>
         const data = '{{ tuple1 }}';
         const json = JSON.parse(data.replace(/&quot;/g,'"'));
-        const confirmationData = json.confirmation.confirmation_data;
+        const confirmationData = json.confirmation.confirmation_url;
+        const id = json.id;
+        console.log(id)
+        console.log(confirmationData)
+        console.log(json)
         location.href = confirmationData
     </script>
 </body>

@@ -1,10 +1,16 @@
 from django.shortcuts import render
 from .forms import paymentFormAll
 from yookassa import Payment, Configuration
+import json as JSon
+import uuid
+
 
 
 # Create your views here.
+id = ''
+
 def payment(request):
+    global id
     if request.method == 'POST':
         form = paymentFormAll(request.POST)
         if form.is_valid() and form.has_changed():
@@ -46,11 +52,17 @@ def payment(request):
                         ]
                     },
                     "capture": True,
-                    "test": True
+                    "test": False
                 })
-
-                json = payment.json().replace('&quot;', '')
-                return render(request, 'test.html', {'tuple1': json})
+                json_post = payment.json()
+                json_js = json_post.replace('&quot;', '')
+                print(json_js)
+                data = json_post
+                json_data = JSon.loads(data)
+                payment_id = json_data['id']
+                id = payment_id
+                print(id)
+                return render(request, 'test.html', {'tuple1': json_js})
 
             except:
                 print('error1')
@@ -91,11 +103,17 @@ def payment(request):
                         ]
                     },
                     "capture": True,
-                    "test": True
+                    "test": False
                 })
 
-                json = payment.json().replace('&quot;', '')
-                return render(request, 'test.html', {'tuple1': json})
+                json_post = payment.json()
+                json_js = json_post.replace('&quot;', '')
+                print(json_js)
+                data = json_post
+                json_data = JSon.loads(data)
+                payment_id = json_data['id']
+                id = payment_id
+                return render(request, 'test.html', {'tuple1': json_js})
             except:
                 print('error2')
 
@@ -135,11 +153,18 @@ def payment(request):
                         ]
                     },
                     "capture": True,
-                    "test": True
+                    "test": False
                 })
 
-                json = payment.json().replace('&quot;', '')
-                return render(request, 'test.html', {'tuple1': json})
+                json_post = payment.json()
+                json_js = json_post.replace('&quot;', '')
+                print(json_js)
+                data = json_post
+                json_data = JSon.loads(data)
+                payment_id = json_data['id']
+                id = payment_id
+                print(id)
+                return render(request, 'test.html', {'tuple1': json_js})
             except:
                 print('error3')
 
@@ -151,6 +176,15 @@ def payment(request):
 
 def ok(request):
     return render(request, 'ok.html')
+
+
+def check(request):
+    id
+    Configuration.account_id = "205657"
+    Configuration.secret_key = "live_4eSjc0jOzCdLdPIhKKSFWU6RO0qItSSTP2CF88LcPwg"
+    payment1 = Payment.find_one(id)
+    check_pay = payment1.json()
+    return render(request, 'check.html', {'check': check_pay})
 
 
 

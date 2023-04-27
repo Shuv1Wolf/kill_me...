@@ -15,6 +15,16 @@
     <h5 class="card-title">Нажмите на кнопку для проверки статуса платежа</h5>
     <a href="{% url 'check' %}" class="btn btn-primary">Проверить</a>
   </div>
+        <div>
+            <p>Статус: <span id="myVariable"></span></p>
+            <script>
+                const data = '{{ check }}';
+                const json = JSON.parse(data.replace(/&quot;/g,'"'));
+                const myVariable = json.status;
+                document.getElementById("myVariable").innerHTML = myVariable;
+            </script>
+        </div>
+
 </div>
 </body>
 </html>
