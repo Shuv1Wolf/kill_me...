@@ -22,7 +22,8 @@ def payment(request):
                         "type": "sbp"
                     },
                     "confirmation": {
-                        "type": "qr"
+                        "type": "redirect",
+                        "return_url": "http://185.154.194.38/ok/"
                     },
                     "receipt": {
                         "customer": {
@@ -66,7 +67,8 @@ def payment(request):
                         "type": "sbp"
                     },
                     "confirmation": {
-                        "type": "qr"
+                        "type": "redirect",
+                        "return_url": "http://185.154.194.38/ok/"
                     },
                     "receipt": {
                         "customer": {
@@ -109,7 +111,8 @@ def payment(request):
                         "type": "sbp"
                     },
                     "confirmation": {
-                        "type": "qr"
+                        "type": "redirect",
+                        "return_url": "http://185.154.194.38/ok/"
                     },
                     "receipt": {
                         "customer": {
@@ -145,6 +148,9 @@ def payment(request):
     else:
         form = paymentFormAll()
         return render(request, 'payment.html', {'form': form})
+
+def ok(request):
+    return render(request, 'ok.html')
 
 
 
